@@ -1,17 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from './Button';
-import ThemeContext from '../themeContext';
+import {ThemeContext} from '../ThemeContext';
 
-function Image(props) {
+function Image() {
+    const theme = useContext(ThemeContext)
     return (
-        <ThemeContext.Consumer>
-            {theme => (
-                <div className={`${theme}-image image`}>
-                    <div className={`${theme}-ball ball`} />
-                    <Button />
-                </div>
-            )}
-        </ThemeContext.Consumer>
+        <div className={`${theme.currentTheme}-image image`}>
+            <div className={`${theme.currentTheme}-ball ball`} />
+            <Button />
+        </div>
     )
 }
 export default Image;

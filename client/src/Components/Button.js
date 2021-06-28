@@ -1,11 +1,13 @@
-import React from 'react'
-import ThemeContext from '../themeContext'
+import React, { useContext } from 'react'
+import {ThemeContext} from '../ThemeContext'
 
-export default function Button(props) {
+
+export default function Button() {
+    const theme = useContext(ThemeContext)
+    
+  
     return (
-        <ThemeContext.Consumer >
-            {toggleTheme => (
-                <button onClick={toggleTheme} className='button'>
+                <button onClick={() => theme.toggleTheme()} className='button'>
                     Switch
                     <span role='img' aria-label='sun' >
                         🌞
@@ -14,8 +16,5 @@ export default function Button(props) {
                         🌚
                     </span>
                 </button>
-            )}
-                
-        </ThemeContext.Consumer>
     )
 }

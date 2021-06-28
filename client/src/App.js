@@ -1,12 +1,13 @@
 import './App.css';
 import Image from './Components/Image';
+import React from 'react';
+import { ThemeProvider } from './ThemeContext';
 
-function App(props) {
+function App() {
   return (
-    <div className="App">
-      Hello
+    <ThemeProvider>
       <Image />
-    </div>
+    </ThemeProvider>
   );
 }
 

@@ -1,15 +1,16 @@
-import React from 'react';
+
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ThemeContext from './themeContext';
+import { ThemeProvider } from './ThemeContext';
+
 
 //create new context by wrapping app in ThemeContext.Provider
 ReactDOM.render(
-  <ThemeContext.Provider >
+  <ThemeProvider>
     <App />
-  </ThemeContext.Provider>,
+  </ThemeProvider>,
   document.getElementById('root')
 );
 

@@ -1,21 +1,28 @@
-import React, { useState } from 'react';
-const ThemeContext = React.createContext('Day'); 
+import React, { createContext, useState } from 'react';
 
+export const ThemeContext = createContext(); 
 
-function ThemeContextProvider() {
-    const [theme, setTheme] = useState('Day');
-    let toggleTheme = () => {
-        setTheme(theme === 'Day' ? 'Night' : 'Day')
-        
+export const ThemeProvider = ({children}) => {
+    const [currentTheme, setCurrentTheme] = useState('Day')
+    const toggleTheme = () => {
+        currentTheme === 'Day' ? setCurrentTheme('Night') : setCurrentTheme('Day')
     }
-
     return (
         <ThemeContext.Provider
-            value={{theme: theme, toggleTheme: toggleTheme}}>
-            {theme}
+            value={{
+                currentTheme,
+                setCurrentTheme,
+                toggleTheme
+            }}
+        >
+            {children}
         </ThemeContext.Provider>
-    )
-}
-export default ThemeContext;
+    );
+};
+
+
+
+
+
 
 
