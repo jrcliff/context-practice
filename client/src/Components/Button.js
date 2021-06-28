@@ -7,14 +7,14 @@ export default function Button() {
     
   
     return (
-                <button onClick={() => theme.toggleTheme()} className='button'>
-                    Switch
-                    <span role='img' aria-label='sun' >
-                        🌞
-                    </span>
-                    <span role='img' aria-label='moon' >
-                        🌚
-                    </span>
-                </button>
+        <button onClick={() => theme.toggleTheme()} className='button'>
+            Switch
+            <span role='img' aria-label='sun' >
+                🌞
+            </span>
+            <span role='img' aria-label='moon' >
+                🌚
+            </span>
+        </button>
     )
 }

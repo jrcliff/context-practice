@@ -1,13 +1,13 @@
 import './App.css';
 import Image from './Components/Image';
 import React from 'react';
-import { ThemeProvider } from './ThemeContext';
+
 
 function App() {
   return (
-    <ThemeProvider>
+    <div>
       <Image />
-    </ThemeProvider>
+    </div>
   );
 }
 
